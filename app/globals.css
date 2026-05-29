@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100;
+  }
+}
+
+@layer utilities {
+  .text-gradient-fajardo {
+    @apply bg-gradient-to-r from-fajardo-yellow via-fajardo-yellow-dark to-fajardo-red bg-clip-text text-transparent;
+  }
+}
+
+/* Leaflet */
+.leaflet-container {
+  z-index: 0;
+  font-family: inherit;
+}
