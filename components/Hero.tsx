@@ -26,7 +26,7 @@ export function Hero() {
           initial="hidden"
           animate="visible"
           variants={{ visible: { transition: { staggerChildren: 0.12 } } }}
-          className="text-white"
+          className="text-center text-white lg:text-left"
         >
           <motion.p
             variants={fadeUp}
@@ -46,13 +46,13 @@ export function Hero() {
             </span>
           </motion.h1>
 
-          <motion.p variants={fadeUp} className="mt-5 max-w-xl text-lg text-white/85">
+          <motion.p variants={fadeUp} className="mx-auto mt-5 max-w-xl text-lg text-white/85 lg:mx-0">
             En <strong>Autopartes Fajardo</strong> encontrás repuestos nuevos y usados,
             piezas de deshuese y asesoría para tu carro, pickup o SUV. Cotizá al instante
             por WhatsApp.
           </motion.p>
 
-          <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-3">
+          <motion.div variants={fadeUp} className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
             <a
               href={CONTACT.whatsappUrl}
               target="_blank"
@@ -72,10 +72,10 @@ export function Hero() {
 
           <motion.ul
             variants={fadeUp}
-            className="mt-10 grid grid-cols-3 gap-4 border-t border-white/20 pt-8"
+            className="mt-10 grid grid-cols-3 gap-4 border-t border-white/20 pt-8 text-center lg:text-left"
           >
             {STATS.map((s) => (
-              <li key={s.label}>
+              <li key={s.label} className="flex flex-col items-center lg:items-start">
                 <p className="font-display text-2xl font-black text-fajardo-yellow sm:text-3xl">
                   {s.value}
                 </p>
@@ -89,7 +89,7 @@ export function Hero() {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="relative"
+          className="relative mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none"
         >
           <div className="absolute -inset-3 rounded-3xl bg-fajardo-yellow/30 blur-xl" />
           <div className="relative overflow-hidden rounded-3xl border-4 border-fajardo-yellow shadow-2xl">
@@ -101,7 +101,7 @@ export function Hero() {
               className="h-[280px] w-full object-cover sm:h-[360px] lg:h-[420px]"
               priority
             />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-fajardo-blue-dark/90 to-transparent p-5">
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-fajardo-blue-dark/90 to-transparent p-5 text-center lg:text-left">
               <p className="font-display text-lg font-bold italic text-white">
                 Repuestos · Yonker · Deshuese
               </p>
