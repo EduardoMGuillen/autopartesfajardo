@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     "deshuese Honduras",
     "piezas usadas carro",
     "reparación vehículos Yoro",
-    "autopartes Santa Rita",
+    "Auto Partes Fajardo El Progreso",
     "desguace El Progreso",
   ],
   authors: [{ name: SITE.name }],

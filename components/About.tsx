@@ -8,7 +8,7 @@ import { fadeUp } from "@/lib/motion";
 import { CONTACT, SITE } from "@/lib/site";
 
 const CHECKS = [
-  "Dos puntos de atención en El Progreso, Yoro",
+  "Auto Partes Fajardo y Auto Partes Fajardo #1",
   "Yonker con inventario rotativo de deshuese",
   "Repuestos para mecánica, carrocería y eléctrico",
   "Cotización rápida por WhatsApp al 3167-7432",
@@ -66,8 +66,8 @@ export function About() {
           </motion.h2>
           <motion.p variants={fadeUp} className="mt-4 leading-relaxed text-slate-600 dark:text-slate-400">
             Somos un negocio familiar dedicado a <strong>repuestos automotrices</strong> y{" "}
-            <strong>yonker</strong> en {SITE.city}, {SITE.department}. Con sucursal en la{" "}
-            <strong>Carretera a Santa Rita</strong> y presencia en la zona urbana, ayudamos a
+            <strong>yonker</strong> en {SITE.city}, {SITE.department}. Con{" "}
+            <strong>Auto Partes Fajardo</strong> y <strong>Auto Partes Fajardo #1</strong>, ayudamos a
             que tu vehículo vuelva a la calle sin gastar de más.
           </motion.p>
           <motion.p variants={fadeUp} className="mt-3 leading-relaxed text-slate-600 dark:text-slate-400">

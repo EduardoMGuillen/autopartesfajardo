@@ -3,7 +3,7 @@
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import L from "leaflet";
 import { useEffect } from "react";
-import type { Location } from "@/lib/site";
+import { MAP_CENTER, type Location } from "@/lib/site";
 import "leaflet/dist/leaflet.css";
 
 const icon = L.icon({
@@ -35,7 +35,7 @@ type Props = {
 
 export function LocationsMap({ locations, activeId }: Props) {
   const active = locations.find((l) => l.id === activeId) ?? null;
-  const center: [number, number] = [15.3945, -87.8153];
+  const center: [number, number] = [MAP_CENTER.lat, MAP_CENTER.lng];
 
   return (
     <MapContainer
@@ -57,6 +57,15 @@ export function LocationsMap({ locations, activeId }: Props) {
             {loc.address}
             <br />
             <em>{loc.hours}</em>
+            <br />
+            <a
+              href={loc.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-block text-sm font-semibold text-blue-700 underline"
+            >
+              Abrir en Google Maps
+            </a>
           </Popup>
         </Marker>
       ))}

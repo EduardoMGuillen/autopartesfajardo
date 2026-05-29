@@ -78,7 +78,7 @@ export function LocationsSection() {
               <input
                 id="location-search"
                 type="search"
-                placeholder="Buscar: Santa Rita, El Progreso…"
+                placeholder="Buscar: Fajardo #1, El Progreso…"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 className="w-full rounded-xl border border-slate-200 bg-white py-3 pl-10 pr-4 shadow-sm outline-none ring-fajardo-red focus:ring-2 dark:border-slate-700 dark:bg-slate-800"
@@ -110,23 +110,37 @@ export function LocationsSection() {
                       </p>
                       <p className="mt-1 text-xs text-slate-500">{loc.reference}</p>
                       <p className="mt-2 text-xs font-medium text-fajardo-red">{loc.hours}</p>
+                      <a
+                        href={loc.mapsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-fajardo-blue hover:text-fajardo-red dark:text-fajardo-yellow"
+                      >
+                        Cómo llegar
+                        <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
                     </button>
                   </li>
                 ))
               )}
             </ul>
 
-            <a
-              href={CONTACT.mapsSearch}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-fajardo-blue hover:text-fajardo-red dark:text-fajardo-yellow"
-            >
-              Abrir en Google Maps
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </a>
+            {activeId && (
+              <a
+                href={LOCATIONS.find((l) => l.id === activeId)?.mapsUrl ?? CONTACT.mapsSearch}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-medium text-fajardo-blue hover:text-fajardo-red dark:text-fajardo-yellow"
+              >
+                Ver sucursal seleccionada en Google Maps
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            )}
           </div>
 
           <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-lg lg:col-span-3 dark:border-slate-700">

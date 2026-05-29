@@ -32,28 +32,40 @@ export type Location = {
   lat: number;
   lng: number;
   hours: string;
+  mapsUrl: string;
 };
 
+/** Coordenadas y enlaces oficiales de Google Maps */
 export const LOCATIONS: Location[] = [
   {
-    id: "santa-rita",
-    name: "Sucursal Carretera a Santa Rita",
-    address: "Salida, Carretera a Santa Rita",
-    reference: "El Progreso, Yoro — rumbo a Santa Rita de Copán",
-    lat: 15.3928,
-    lng: -87.8085,
+    id: "auto-partes-fajardo",
+    name: "Auto Partes Fajardo",
+    address: "El Progreso, Yoro, Honduras",
+    reference: "Piezas usadas y repuestos — ubicación en Google Maps",
+    lat: 15.3832674,
+    lng: -87.8044822,
     hours: "Lun–Sáb 7:30 AM – 5:30 PM",
+    mapsUrl:
+      "https://www.google.com/maps/place/Auto+partes+Fajardo/@15.3832674,-87.8044822,17z",
   },
   {
-    id: "progreso-centro",
-    name: "Sucursal El Progreso",
-    address: "Zona urbana, El Progreso",
-    reference: "Yoro, Honduras — cerca del eje comercial de la ciudad",
-    lat: 15.3962,
-    lng: -87.8221,
+    id: "auto-partes-fajardo-1",
+    name: "Auto Partes Fajardo #1",
+    address: "El Progreso, Yoro, Honduras",
+    reference: "Segunda sucursal — ubicación en Google Maps",
+    lat: 15.4053349,
+    lng: -87.8054757,
     hours: "Lun–Sáb 7:30 AM – 5:30 PM",
+    mapsUrl:
+      "https://www.google.com/maps/place/Auto+Partes+Fajardo+%23+1/@15.4053349,-87.8054757,17z",
   },
 ];
+
+/** Centro del mapa entre ambas sucursales */
+export const MAP_CENTER = {
+  lat: 15.394301,
+  lng: -87.804979,
+} as const;
 
 export const SERVICES = [
   {
@@ -109,7 +121,7 @@ export const TESTIMONIALS = [
   },
   {
     quote:
-      "Buen surtido de piezas japonesas y americanas. Las dos sucursales facilitan cuando uno va en camino a Santa Rita.",
+      "Buen surtido de piezas japonesas y americanas. Las dos sucursales en El Progreso siempre tienen opciones.",
     author: "José R.",
     role: "Mecánico, Yoro",
   },

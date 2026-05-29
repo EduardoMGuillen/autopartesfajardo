@@ -106,7 +106,7 @@ export function Hero() {
                 Repuestos · Yonker · Deshuese
               </p>
               <p className="text-sm text-fajardo-yellow">
-                Carretera a Santa Rita y zona urbana
+                Auto Partes Fajardo y Fajardo #1
               </p>
             </div>
           </div>
